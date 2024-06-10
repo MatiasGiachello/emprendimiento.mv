@@ -18,7 +18,6 @@ html {
 }
 
 
-
 /* ********************************** */
 /*             UTILIDADES             */
 /* ********************************** */
@@ -35,11 +34,14 @@ html {
 
 
 
+
 /* ********************************** */
 /*               HEADER               */
 /* ********************************** */
+
+
 .container-hero {
-	background-color: var(--background-color);
+	background-color: white;
 }
 
 .hero {
@@ -63,13 +65,20 @@ html {
 	display: flex;
 	flex-direction: column;
 }
-
-.container-logo {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
+.logo-size {
+    height: 100%; /* Hace que la imagen del logo llene el contenedor */
+    width: auto; /* Mantiene la proporción de la imagen */
+    object-fit: contain; /* Asegura que la imagen se ajuste dentro del contenedor */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin-left: auto; /* Centra horizontalmente la imagen */
+    margin-right: auto; /* Centra horizontalmente la imagen */
 }
-
+.container-logo {
+    position: relative; /* Establece la posición relativa para el contenedor */
+    height: 50px; /* Altura fija para el contenedor del logo */
+    overflow: hidden; /* Oculta cualquier parte del logo que exceda la altura del contenedor */
+	align-items: center;
+}
 .container-logo i {
 	font-size: 3rem;
 }
@@ -111,6 +120,18 @@ html {
 /* ************* NAVBAR ************* */
 .container-navbar {
 	background-color: var(--primary-color);
+	font-size: 25px;
+}
+.button {
+    text-decoration: none;
+    padding: 10px 15px;
+    display: inline-block;
+    color: #333; /* Color de texto predeterminado */
+    font-size: 25px; /* Tamaño de letra aumentado */
+}
+.button.active {
+    color: #000; /* Color de texto del enlace activo */
+    border-bottom: 2px solid #000000; /* Línea inferior */
 }
 
 .navbar {
@@ -205,6 +226,33 @@ html {
 }
 
 
+/* ********************************** */
+/*     botón flotante de WhatsApp     */
+/* ********************************** */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 3px #999;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+	display: block; /* Elimina el espacio extra debajo de la imagen */
+}
+
 
 /* ********************************** */
 /*               BANNER               */
@@ -253,7 +301,7 @@ html {
 /*            MAIN CONTENT            */
 /* ********************************** */
 .main-content {
-	background-color: var(--background-color);
+	background-color: white;
 }
 
 
@@ -274,7 +322,7 @@ html {
 	justify-content: center;
 	gap: 1.5rem;
 
-	background-color: #fff;
+	background-color: #e5e5e5;
 	border-radius: 1rem;
 	padding: 1.5rem 0;
 }
@@ -600,7 +648,7 @@ html {
 }
 
 .card-product:hover {
-	transform: translateY(-5px);
+	transform: scale(1.2);
 	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
@@ -628,6 +676,7 @@ html {
 	right: 10px;
 	display: flex;
 	gap: 10px;
+	font-size: 13px;
 }
 
 .button-group span {
@@ -672,6 +721,10 @@ html {
 	font-size: 1.2em;
 	color: #333;
 	margin-top: 10px;
+}
+.price span {
+    text-decoration: line-through; /* Tacha el texto */
+    color: #e72525; /* Color gris para el precio original */
 }
 
 /* ********************************** */
